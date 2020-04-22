@@ -6,12 +6,23 @@
   "repository": "git@github.com:MangoYellowH/MangoSolution.git",
   "author": "huangyuan3h <huangyuan3h@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "",
+    "dev": "",
+    "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix",
+    "test": "jest --passWithNoTests",
+    "test-watch": "jest --watchAll"
+  },
   "dependencies": {
     "koa": "^2.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
     "css-loader": "^3.5.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -27,6 +38,19 @@
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
-    "webpack": "^4.42.1"
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run test",
+      "git add"
+    ]
   }
 }
