@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start": "node ./dist/app.js",
-    "dev": "",
+    "start": "NODE_ENV=production node ./dist/app.js",
+    "dev": "webpack -w && node ./dist/app.js",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix",
     "test": "jest --passWithNoTests",
     "test-watch": "jest --watch"
@@ -39,8 +39,7 @@
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.11"
   },
   "husky": {
     "hooks": {
