@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": ".build",
+        "outDir": "dist",
         "module": "esnext",
         "target": "es5",
         "lib": [
@@ -34,7 +34,7 @@
         "emitDecoratorMetadata": true
     },
     "include": [
-        "src/**/*"
+        "src/**/*", "webpack.config.js"
     ],
     "exclude": [
         "node_modules",
