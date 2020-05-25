@@ -2,6 +2,8 @@ import Koa from 'koa';
 
 const app = new Koa();
 
+// loading middleware
+
 // response
 app.use((ctx) => {
   ctx.body = 'Hello Koa';
